@@ -170,3 +170,8 @@ C:\Projects\UI\GoRules\GoRules.Api\obj\Debug\net10.0\refint\GoRules.Api.dll
 C:\Projects\UI\GoRules\GoRules.Api\obj\Debug\net10.0\GoRules.Api.pdb
 C:\Projects\UI\GoRules\GoRules.Api\obj\Debug\net10.0\GoRules.Api.genruntimeconfig.cache
 C:\Projects\UI\GoRules\GoRules.Api\obj\Debug\net10.0\ref\GoRules.Api.dll
+C:\Projects\UI\GoRules\GoRules.Api\obj\Debug\net10.0\GoRules.Api.sourcelink.json
+C:\Projects\UI\GoRules\GoRules.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Projects\UI\GoRules\GoRules.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Projects\UI\GoRules\GoRules.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Projects\UI\GoRules\GoRules.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll

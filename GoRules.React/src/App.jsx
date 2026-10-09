@@ -1,7 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 
-const API_URL = 'http://localhost:5147/api';
-
 const emptyRule = {
   id: null,
   ruleName: '',
@@ -107,7 +105,8 @@ const payloadPresets = [
   },
 ];
 
-function App() {
+function App({ apiUrl }) {
+  const API_URL = apiUrl;
   const [page, setPage] = useState('dashboard');
   const [rules, setRules] = useState([]);
   const [dashboard, setDashboard] = useState({ totalRules: 0, activeRules: 0, executionCount: 0 });
