@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run GoRules API",
+			"type": "shell",
+			"command": "dotnet run --project GoRules.Api --urls http://localhost:5147",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run GoRules React UI",
+			"type": "shell",
+			"command": "cd GoRules.React && npm install && npm run dev",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run GoRules React UI",
+			"type": "shell",
+			"command": "cd GoRules.React; npm install; npm run dev",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

@@ -1,0 +1,94 @@
+@GoRules.Api_HostAddress = http://localhost:5147
+
+### Dashboard
+GET {{GoRules.Api_HostAddress}}/api/dashboard
+Accept: application/json
+
+### Get all rules
+GET {{GoRules.Api_HostAddress}}/api/rules
+Accept: application/json
+
+### Get rule by id
+GET {{GoRules.Api_HostAddress}}/api/rules/1
+Accept: application/json
+
+### Create a rule
+POST {{GoRules.Api_HostAddress}}/api/rules
+Content-Type: application/json
+
+{
+  "ruleName": "High Risk Applicant",
+  "description": "Reject applicants with high debt and low credit score.",
+  "isActive": true,
+  "conditions": [
+    {
+      "leftOperand": "CreditScore",
+      "operator": ">",
+      "rightOperand": "650",
+      "logicalOperator": "AND",
+      "displayOrder": 1
+    },
+    {
+      "leftOperand": "DebtRatio",
+      "operator": ">",
+      "rightOperand": "40",
+      "logicalOperator": "AND",
+      "displayOrder": 2
+    }
+  ],
+  "result": {
+    "decision": "Reject",
+    "message": "Applicant exceeds policy thresholds"
+  }
+}
+
+### Update a rule
+PUT {{GoRules.Api_HostAddress}}/api/rules/1
+Content-Type: application/json
+
+{
+  "ruleName": "Updated Risk Review",
+  "description": "Manual review for elevated debt burden.",
+  "isActive": true,
+  "conditions": [
+    {
+      "leftOperand": "DebtRatio",
+      "operator": ">",
+      "rightOperand": "35",
+      "logicalOperator": "AND",
+      "displayOrder": 1
+    }
+  ],
+  "result": {
+    "decision": "Review",
+    "message": "Requires manual review"
+  }
+}
+
+### Delete a rule
+DELETE {{GoRules.Api_HostAddress}}/api/rules/1
+
+### Execute a specific rule
+POST {{GoRules.Api_HostAddress}}/api/rules/execute
+Content-Type: application/json
+
+{
+  "ruleId": 1,
+  "input": {
+    "CreditScore": 720,
+    "LoanAmount": 300000,
+    "DebtRatio": 35
+  }
+}
+
+### Execute all active rules
+POST {{GoRules.Api_HostAddress}}/api/rules/execute
+Content-Type: application/json
+
+{
+  "input": {
+    "CreditScore": 620,
+    "LoanAmount": 800000,
+    "DebtRatio": 45
+  }
+}
