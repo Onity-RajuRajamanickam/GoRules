@@ -8,6 +8,11 @@
 **/node_modules/
 **/dist/
 **/.vite/
+artifacts/
+
+# Generated docs
+docs/*.pdf
+docs/GoRules-ZEN-Engine-Guide.html
 
 # Visual Studio / VS Code local state
 .vs/
